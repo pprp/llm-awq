@@ -128,7 +128,7 @@ if __name__ == "__main__":
         "mpt",
         "phi3"
     ], "We only support llama & falcon & mpt now"
-    assert args.precision in ["W4A16", "W16A16"], "We only support W4A16/W16A16 now"
+    assert args.precision in ["W4A16", "W16A16", "fp16"], "We only support W4A16/W16A16 now"
 
     gen_params.n_predict = 512
     gen_params.n_vocab = 32000

@@ -20,8 +20,9 @@ export CUDA_VISIBLE_DEVICES=1,2
 
 CUDA_VISIBLE_DEVICES=1 python demo.py --model_type phi3 \
     --model_path $MODEL_PATH/$MODEL_NAME \
-    --q_group_size 128 --load_quant quant_cache/phi-3-chat-w4-g128-awq-v2.pt \
-    --precision W4A16
+    --q_group_size 128 \
+    --precision fp16
+    # --load_quant quant_cache/phi-3-chat-w4-g128-awq-v2.pt \
 
 # # Split checkpoint into shards for mem-efficient loading:
 # python split_ckpt.py --input_path quant_cache/phi-3-chat-w4-g128-awq.pt \
